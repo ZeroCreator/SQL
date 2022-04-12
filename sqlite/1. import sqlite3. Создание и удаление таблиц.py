@@ -1,27 +1,29 @@
 import sqlite3 as sq
 
-con = sq.connect("saper.db")
-cur = con.cursor()
+#con = sq.connect("saper.db")
+#cur = con.cursor() # Возвращает экземпляр класса курсор
 
-cur.execute("""
-""")
+#cur.execute("""
+#""")
 
-con.close()
+#con.close()
 
 # *.db, *.db3, *.sqlite и *.sqlite3
 
 # через менеджер контекста:
 with sq.connect("saper.db") as con:
     cur = con.cursor()
-
 # Создание и удаление таблиц
-cur.execute("""CREATE TABLE users (
-    name TEXT,
-    sex INTEGER,
-    old INTEGER,
-    score INTEGER
-)""")
+#    cur.execute("DROP TABLE users")
 
+    cur.execute("""CREATE TABLE IF NOT EXISTS users (
+        name TEXT NOT NULL,
+        sex INTEGER NOT NULL DEFAULT 1,
+        old INTEGER,
+        score INTEGER
+    )""")
+
+con.close()
 # SELECT * FROM users
 # SELECT rowid, * FROM users
 
