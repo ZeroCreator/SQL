@@ -33,3 +33,11 @@ con.close()
 
 # PRIMARY KEY, AUTOINCREMENT, NOT NULL и DEFAULT
 # user_id INTEGER PRIMARY KEY AUTOINCREMENT
+
+with sq.connect("games.db") as con:
+    cur = con.cursor()
+    cur.execute("""CREATE TABLE IF NOT EXISTS games (
+        user_id INTEGERPRIMARY KEY AUTOINCREMENT,
+        score INTEGER,
+        time INTEGER
+    )""")
