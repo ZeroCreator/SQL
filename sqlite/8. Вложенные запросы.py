@@ -45,7 +45,7 @@ WHERE mark > (SELECT mark FROM marks
 WHERE id = 2 AND subject LIKE 'Си')
 AND subject LIKE 'Си'
 
-# Вставить поля в другую таблицу
+# Вставить поля в новую таблицу
 INSERT INTO female
 SELECT * FROM students WHERE sex = 2
 
