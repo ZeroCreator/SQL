@@ -27,6 +27,7 @@ with sq.connect("saper.db") as con:
     )""")
 
 
+# команда SELECT для выбора записей из таблицы users:
 # SELECT * FROM users
 # SELECT rowid, * FROM users
 
@@ -35,8 +36,8 @@ with sq.connect("saper.db") as con:
 
 # PRIMARY KEY, AUTOINCREMENT, NOT NULL и DEFAULT
 # user_id INTEGER PRIMARY KEY AUTOINCREMENT
+# INSERT INTO users (name, old, score) VALUES('Алексей', 18, 1000)
 
-    #cur.execute("DROP TABLE IF EXISTS games")
 
     cur.execute("""CREATE TABLE IF NOT EXISTS games (
         user_id INTEGER,
@@ -44,14 +45,12 @@ with sq.connect("saper.db") as con:
         time INTEGER
     )""")
 
-    #cur.execute("DROP TABLE IF EXISTS tab1")
 
     cur.execute("""CREATE TABLE IF NOT EXISTS tab1 (
             score INTEGER,
             'from' TEXT
         )""")
 
-    #cur.execute("DROP TABLE IF EXISTS tab2")
 
     cur.execute("""CREATE TABLE IF NOT EXISTS tab2 (
                 val INTEGER,
