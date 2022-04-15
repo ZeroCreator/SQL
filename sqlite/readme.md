@@ -1,1 +1,1 @@
-![](C:/Users/shkol/OneDrive/Desktop/оператор JOIN.jpg)
+![](C:/Users/shkol/OneDrive/Desktop/оператор JOIN.png)
