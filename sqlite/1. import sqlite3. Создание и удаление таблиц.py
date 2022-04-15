@@ -1,3 +1,4 @@
+# подключение к БД, создание и удаление таблиц
 import sqlite3 as sq
 
 #con = sq.connect("saper.db")
@@ -14,8 +15,9 @@ import sqlite3 as sq
 with sq.connect("saper.db") as con:
     cur = con.cursor()
 # Создание и удаление таблиц
+# Удаление таблицы:
     #cur.execute("DROP TABLE IF EXISTS users")
-
+# Создание таблицы:
     cur.execute("""CREATE TABLE IF NOT EXISTS users (
         user_id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT NOT NULL,
