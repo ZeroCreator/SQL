@@ -24,7 +24,7 @@ with sq.connect("saper.db") as con:
         score INTEGER
     )""")
 
-con.close()
+
 # SELECT * FROM users
 # SELECT rowid, * FROM users
 
@@ -34,10 +34,12 @@ con.close()
 # PRIMARY KEY, AUTOINCREMENT, NOT NULL и DEFAULT
 # user_id INTEGER PRIMARY KEY AUTOINCREMENT
 
-with sq.connect("games.db") as con:
-    cur = con.cursor()
+    cur.execute("DROP TABLE IF EXISTS games")
+
     cur.execute("""CREATE TABLE IF NOT EXISTS games (
-        user_id INTEGERPRIMARY KEY AUTOINCREMENT,
+        user_id INTEGER,
         score INTEGER,
         time INTEGER
     )""")
+
+con.close()
